@@ -1,5 +1,5 @@
-FROM node:latest
+FROM node:15
 
-ENV NODE_ENV=production
 
-WORKDIR /app
+WORKDIR /front
+
