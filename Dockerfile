@@ -1,5 +1,8 @@
 FROM node:15
 
+WORKDIR /frontend
+COPY . ./
 
-WORKDIR /front
+# Нужно делать yarn build и раздать статику через nginx из папки public
 
+EXPOSE 3000
