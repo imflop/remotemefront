@@ -1,5 +1,8 @@
-FROM node:latest
+FROM node:15
 
-ENV NODE_ENV=production
+WORKDIR /frontend
+COPY . ./
 
-WORKDIR /app
+# Нужно делать yarn build и раздать статику через nginx из папки public
+
+EXPOSE 3000

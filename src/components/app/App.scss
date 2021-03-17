@@ -1,0 +1,8 @@
+.single-button {
+  color: red;
+
+  &:hover {
+    color: blue;
+    background: red;
+  }
+}
