@@ -1,0 +1,24 @@
+/**
+  Block: list (ul)
+  Modification: inline, separator
+ */
+.list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+
+  &_inline {
+    display: inline-flex;
+  }
+
+  &_separator {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+
+    .list_item:not(:last-child)::after {
+      content: "\00D7";
+      margin: 0 14px;
+    }
+  }
+}

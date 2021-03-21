@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {VacanciesAPI} from "../api/Vacancies";
+import {JobsAPI} from "../api/jobs/jobs";
 import JobCard from "../components/job-card/JobCard";
 
 
@@ -8,26 +8,26 @@ import JobCard from "../components/job-card/JobCard";
  */
 const IndexPage: React.FunctionComponent = () => {
 
-    const [vacanciesList, setVacanciesList] = useState<object[] | null>(null);
+    const [jobsList, setJobsList] = useState<object[] | null>(null);
 
-    const getVacanciesList = async () => {
-        const data: Array<object> = await VacanciesAPI.list();
-        setVacanciesList(() => data);
+    const getJobsList = async () => {
+        const data: Array<object> = await JobsAPI.list();
+        setJobsList(() => data);
     }
 
     useEffect(() => {
 
-        getVacanciesList();
+        getJobsList();
     },[])
 
-    if (!vacanciesList) {
+    if (!jobsList) {
         return <div>Загрузка...</div>
     }
 
     return (
         <>
-            {vacanciesList.map((item => (
-                <JobCard {...item} />
+            {jobsList.map(((item, i) => (
+                <JobCard key={i} {...item} />
             )))}
         </>
     );

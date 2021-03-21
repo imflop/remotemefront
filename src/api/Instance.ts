@@ -1,6 +1,17 @@
 import axios from "axios";
 
-export const instance = axios.create({
+const Instance = axios.create({
     baseURL: 'http://localhost:8080/api/v1',
-    headers: { 'Content-Type': 'application/json' }
+    responseType: "json"
 });
+
+// TODO: Обработка ошибок
+// Instance.interceptors.response.use((response) => {
+//     response.
+// }, function (error) {
+//     // Any status codes that falls outside the range of 2xx cause this function to trigger
+//     // Do something with response error
+//     return Promise.reject(error);
+// });
+
+export default Instance;
