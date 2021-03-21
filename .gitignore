@@ -7,7 +7,7 @@
 .pnp.js
 
 # testing
-/coverage
+/reports
 
 # production
 /dist
