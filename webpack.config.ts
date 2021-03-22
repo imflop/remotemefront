@@ -35,7 +35,7 @@ const config: webpack.Configuration = {
         rules: [
             {
                 // JS
-                test: /\.([jt])s(x)$/,
+                test: /\.([jt])sx?$/,
                 include: path.resolve(__dirname, 'src'),
                 use: "babel-loader",
             },
