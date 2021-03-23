@@ -1,0 +1,78 @@
+/**
+  DM Sans
+ */
+
+// Regular
+@font-face {
+  font-family: 'DM Sans';
+  src: url('regular/DMSans-Regular.eot');
+  src: local('DM Sans Regular'), local('DMSans-Regular'),
+  url('regular/DMSans-Regular.eot?#iefix') format('embedded-opentype'),
+  url('regular/DMSans-Regular.woff2') format('woff2'),
+  url('regular/DMSans-Regular.woff') format('woff'),
+  url('regular/DMSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('regular/DMSans-Italic.eot');
+  src: local('DM Sans Italic'), local('DMSans-Italic'),
+  url('regular/DMSans-Italic.eot?#iefix') format('embedded-opentype'),
+  url('regular/DMSans-Italic.woff2') format('woff2'),
+  url('regular/DMSans-Italic.woff') format('woff'),
+  url('regular/DMSans-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+// Medium
+@font-face {
+  font-family: 'DM Sans';
+  src: url('medium/DMSans-Medium.eot');
+  src: local('DM Sans Medium'), local('DMSans-Medium'),
+  url('medium/DMSans-Medium.eot?#iefix') format('embedded-opentype'),
+  url('medium/DMSans-Medium.woff2') format('woff2'),
+  url('medium/DMSans-Medium.woff') format('woff'),
+  url('medium/DMSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('medium/DMSans-MediumItalic.eot');
+  src: local('DM Sans Medium Italic'), local('DMSans-MediumItalic'),
+  url('medium/DMSans-MediumItalic.eot?#iefix') format('embedded-opentype'),
+  url('medium/DMSans-MediumItalic.woff2') format('woff2'),
+  url('medium/DMSans-MediumItalic.woff') format('woff'),
+  url('medium/DMSans-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+// Bold
+@font-face {
+  font-family: 'DM Sans';
+  src: url('bold/DMSans-Bold.eot');
+  src: local('DM Sans Bold'), local('DMSans-Bold'),
+  url('bold/DMSans-Bold.eot?#iefix') format('embedded-opentype'),
+  url('bold/DMSans-Bold.woff2') format('woff2'),
+  url('bold/DMSans-Bold.woff') format('woff'),
+  url('bold/DMSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('bold/DMSans-BoldItalic.eot');
+  src: local('DM Sans Bold Italic'), local('DMSans-BoldItalic'),
+  url('bold/DMSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+  url('bold/DMSans-BoldItalic.woff2') format('woff2'),
+  url('bold/DMSans-BoldItalic.woff') format('woff'),
+  url('bold/DMSans-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
