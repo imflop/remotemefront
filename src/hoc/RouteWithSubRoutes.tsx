@@ -2,9 +2,10 @@ import React from "react";
 import { Route, RouteProps } from "react-router-dom";
 
 
-export interface RouteObject extends RouteProps {
-    routes?: RouteObject[];
-}
+type Modify<T, R> = Omit<T, keyof R> & R;
+export type RouteObject  = Modify<RouteProps , {
+    component: React.ElementType,
+}>
 
 
 /**
@@ -16,7 +17,6 @@ const RouteWithSubRoutes = ({component: Component, ...rest}: RouteObject) => (
         <Route
             {...rest}
             render={routeProps => (
-                // @ts-ignore
                 <Component {...routeProps} />
             )}
         />
