@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
+import { getHumanTimeFromNow } from "../../utils/dateTimeFormat";
 
 import './JobCard.scss';
 
@@ -15,8 +14,7 @@ type Job = {
 
 const JobCard: React.ElementType = ({uuid, short_description, created_at, city, scope}: Job) => {
 
-    dayjs.extend(relativeTime);
-    const formattedDate = dayjs(created_at).fromNow();
+    const formattedDate = getHumanTimeFromNow(created_at);
 
     return (
         <div className="card card_job">
