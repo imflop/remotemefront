@@ -1,5 +1,46 @@
 .header {
-  height: 60px;
-  border-bottom: aqua 1px solid;
+  height: 80px;
   width: 100%;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__inner {
+    max-width: 1280px;
+    width: 100%;
+    margin-right: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .logotype {
+    text-decoration: none;
+
+    &__img {
+      height: 60px;
+    }
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .post-button {
+      padding: 16px 30px;
+      text-decoration: none;
+      color: #FF4392;
+      background-color: rgb(255 67 146 / 10%);
+      border-radius: 4px;
+      font-size: 0.91rem;
+      font-weight: 500;
+
+      &:hover {
+        background-color: rgb(255 67 146 / 15%);
+      }
+    }
+  }
 }
