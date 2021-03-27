@@ -30,21 +30,18 @@
     width: 100%;
 
     .menu {
-      margin-left: 5%;
+      margin-left: 20px;
 
       &__item {
         text-decoration: none;
-        color: #181B23;
+        color: #0E162E;
         font-weight: 500;
         transition: color 200ms ease-in-out;
         padding: 10px 5px;
+        font-size: 0.91rem;
 
         &:not(:last-child) {
           margin-right: 20px;
-        }
-
-        &:hover {
-          color: #4e2aff;
         }
       }
     }
