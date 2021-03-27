@@ -29,6 +29,26 @@
     align-items: center;
     width: 100%;
 
+    .menu {
+      margin-left: 5%;
+
+      &__item {
+        text-decoration: none;
+        color: #181B23;
+        font-weight: 500;
+        transition: color 200ms ease-in-out;
+        padding: 10px 5px;
+
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+
+        &:hover {
+          color: #4e2aff;
+        }
+      }
+    }
+
     .post-button {
       padding: 16px 30px;
       text-decoration: none;
