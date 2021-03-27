@@ -1,11 +1,9 @@
 import IndexPage from "./IndexPage";
 
-const routes = [
+export default [
     {
         path: "/",
         exact: true,
         component: IndexPage
     }
 ];
-
-export default routes;
