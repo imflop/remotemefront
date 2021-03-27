@@ -1,25 +1,19 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 16px;
+  background-color: #F7F9FB;
+  color: #181B23;
 }
-
 
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  // For delete
-  align-items: center;
 }
 
-.container {
-  max-width: 700px;
+.main-wrapper {
+  flex: 1 0 auto;
+  max-width: 1280px;
   width: 100%;
-}
-
-.main-container {
-  flex: 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  align-self: center;
 }

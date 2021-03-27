@@ -1,15 +1,18 @@
 import React from 'react';
 
-import './App.scss';
 import Header from "./header/Header";
+import Footer from "./footer/Footer";
+
+import './App.scss';
 
 const App: React.FunctionComponent = ({children}) => {
     return (
         <>
             <Header />
-            <main className="container">
+            <div className="main-wrapper">
                 {children}
-            </main>
+            </div>
+            <Footer />
         </>
     );
 };

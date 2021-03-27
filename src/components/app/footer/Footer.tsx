@@ -5,7 +5,9 @@ import './Footer.scss';
 const Footer = () => {
     return (
         <footer className="footer">
-            This is header
+            <div className="footer__inner">
+                remote_me - find remote jobs, without the tears
+            </div>
         </footer>
     );
 }
