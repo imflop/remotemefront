@@ -18,7 +18,6 @@ const IndexPage: React.FunctionComponent = () => {
     }
 
     useEffect(() => {
-
         getJobsList();
     },[])
 

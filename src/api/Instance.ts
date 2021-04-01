@@ -6,12 +6,13 @@ const Instance = axios.create({
 });
 
 // TODO: Обработка ошибок
-// Instance.interceptors.response.use((response) => {
-//     response.
-// }, function (error) {
-//     // Any status codes that falls outside the range of 2xx cause this function to trigger
-//     // Do something with response error
-//     return Promise.reject(error);
-// });
+Instance.interceptors.response.use((response) => {
+    console.log("Response getted");
+    return response;
+}, function (error) {
+    // Any status codes that falls outside the range of 2xx cause this function to trigger
+    // Do something with response error
+    return Promise.reject(error);
+});
 
 export default Instance;
