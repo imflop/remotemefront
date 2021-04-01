@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
-import {JobsAPI} from "../api/jobs/jobs";
-import JobCard from "../components/job-card/JobCard";
+import { JobsAPI } from "../../api/jobs/jobs";
+import JobCard from "../../components/job-card/JobCard";
+
+import './IndexPage.scss';
 
 
 /**
@@ -25,11 +27,11 @@ const IndexPage: React.FunctionComponent = () => {
     }
 
     return (
-        <>
+        <main className="container">
             {jobsList.map(((item, i) => (
                 <JobCard key={i} {...item} />
             )))}
-        </>
+        </main>
     );
 };
 
