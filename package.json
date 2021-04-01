@@ -5,9 +5,14 @@
   "private": true,
   "scripts": {
     "dev": "webpack serve --open",
+    "report": "webpack --profile --json > reports/stats.json && webpack-bundle-analyzer reports/stats.json --mode server --port 4000",
     "build": "webpack"
   },
   "dependencies": {
+    "antd": "^4.14.0",
+    "axios": "^0.21.1",
+    "dayjs": "^1.10.4",
+    "modern-css-reset": "^1.4.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"
@@ -26,11 +31,13 @@
     "@types/react-dom": "^17.0.2",
     "@types/react-router-dom": "^5.1.7",
     "@types/webpack": "^4.41.26",
+    "@types/webpack-bundle-analyzer": "^3.9.1",
     "@types/webpack-dev-server": "^3.11.2",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.1.3",
     "fork-ts-checker-webpack-plugin": "^6.1.1",
     "html-webpack-plugin": "^5.3.1",
+    "resolve-url-loader": "^3.1.2",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
@@ -38,6 +45,7 @@
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3",
     "webpack": "^5.26.2",
+    "webpack-bundle-analyzer": "^4.4.0",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
   }

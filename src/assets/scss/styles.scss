@@ -1,0 +1,9 @@
+// CSS Resets
+@import '~modern-css-reset';
+
+// Font connections
+@import '../fonts/DMSans/connect';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@import "card";
+@import "lists";

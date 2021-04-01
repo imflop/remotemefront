@@ -18,6 +18,7 @@ const config: webpack.Configuration = {
         compress: true,
         port: 3000,
         hot: true,
+        historyApiFallback: true,
     },
     resolve: {
         extensions: [".tsx", ".ts", ".js", ".json"],
@@ -34,14 +35,14 @@ const config: webpack.Configuration = {
         rules: [
             {
                 // JS
-                test: /\.([jt])s(x)$/,
+                test: /\.([jt])sx?$/,
                 include: path.resolve(__dirname, 'src'),
                 use: "babel-loader",
             },
             {
                 // Styles
                 test: /\.(sa|sc|c)ss$/,
-                use: ['style-loader', 'css-loader', "sass-loader"],
+                use: ['style-loader', 'css-loader', 'resolve-url-loader', "sass-loader"],
             },
             {
                 // Images
@@ -59,6 +60,7 @@ const config: webpack.Configuration = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js',
         clean: true,
+        publicPath: '/'
     },
     optimization: {
         moduleIds: 'deterministic',

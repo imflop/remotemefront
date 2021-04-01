@@ -1,11 +1,20 @@
 import React from 'react';
 
-import './App.scss'
+import Header from "./header/Header";
+import Footer from "./footer/Footer";
 
-const App = () => (
-    <div className="App">
-        <button className="single-button" type="reset">Busdasdtton</button>
-    </div>
-);
+import './App.scss';
+
+const App: React.FunctionComponent = ({children}) => {
+    return (
+        <>
+            <Header />
+            <div className="main-wrapper">
+                {children}
+            </div>
+            <Footer />
+        </>
+    );
+};
 
 export default App;
