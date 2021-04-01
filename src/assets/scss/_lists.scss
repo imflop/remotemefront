@@ -16,7 +16,7 @@
     align-items: center;
     position: relative;
 
-    .list_item:not(:last-child)::after {
+    .list__item:not(:last-child)::after {
       content: "\00D7";
       margin: 0 14px;
     }
