@@ -12,9 +12,9 @@ export type Job = {
     created_at: string,
     city: string,
     company_name: string,
-    "stack": string[],
-    "salary_from": number,
-    "salary_to": number,
+    stack: string[],
+    salary_from: number,
+    salary_to: number,
 };
 
 const JobCard: React.ElementType = ({uuid, short_description, created_at, company_name, city}: Job) => {
