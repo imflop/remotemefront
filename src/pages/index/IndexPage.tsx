@@ -15,8 +15,7 @@ const IndexPage: React.FunctionComponent = () => {
 
     const getJobsList = async () => {
         const data: PaginatedResponse = await JobsAPI.list();
-        
-        setJobsList(() => data.result);
+        setJobsList(() => data.results);
     }
 
     useEffect(() => {

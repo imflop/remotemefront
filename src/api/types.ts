@@ -31,5 +31,5 @@ export type PaginatedResponse = {
     count: number,
     next: string,
     previous: string,
-    result: ShortAdvert[]
+    results: ShortAdvert[]
 };
