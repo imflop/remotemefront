@@ -1,23 +1,11 @@
+import { ShortAdvert } from 'api/types';
 import React from 'react';
 import { Link } from "react-router-dom";
 import { getHumanTimeFromNow } from "../../utils/dateTimeFormat";
 
 import './JobCard.scss';
 
-export type Job = {
-    uuid: string
-    short_description: string,
-    long_description: string,
-    scope: string;
-    created_at: string,
-    city: string,
-    company_name: string,
-    stack: string[],
-    salary_from: number,
-    salary_to: number,
-};
-
-const JobCard: React.ElementType = ({uuid, short_description, created_at, company_name, city}: Job) => {
+const JobCard: React.ElementType = ({uuid, short_description, created_at, company_name, city}: ShortAdvert) => {
 
     const formattedDate = getHumanTimeFromNow(created_at);
 

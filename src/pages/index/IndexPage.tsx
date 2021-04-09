@@ -1,3 +1,4 @@
+import { PaginatedResponse, ShortAdvert } from "api/types";
 import React, {useEffect, useState} from "react";
 import { JobsAPI } from "../../api/jobs/jobs";
 import JobCard from "../../components/job-card/JobCard";
@@ -10,11 +11,12 @@ import './IndexPage.scss';
  */
 const IndexPage: React.FunctionComponent = () => {
 
-    const [jobsList, setJobsList] = useState<object[] | null>(null);
+    const [jobsList, setJobsList] = useState<ShortAdvert[] | null>(null);
 
     const getJobsList = async () => {
-        const data: Array<object> = await JobsAPI.list();
-        setJobsList(() => data);
+        const data: PaginatedResponse = await JobsAPI.list();
+        
+        setJobsList(() => data.result);
     }
 
     useEffect(() => {
@@ -27,7 +29,7 @@ const IndexPage: React.FunctionComponent = () => {
 
     return (
         <main className="container">
-            {jobsList.map(((item, i) => (
+            {jobsList.map(((item: ShortAdvert, i: number) => (
                 <JobCard key={i} {...item} />
             )))}
         </main>
