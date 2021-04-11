@@ -1,4 +1,4 @@
-import { ShortAdvert } from 'api/types';
+import { ShortAdvert } from 'data/types';
 import React from 'react';
 import { Link } from "react-router-dom";
 import { getHumanTimeFromNow } from "../../utils/dateTimeFormat";

@@ -2,7 +2,7 @@ import React from 'react';
 import { getHumanTimeFromNow } from "../../utils/dateTimeFormat";
 
 import './JobCard.scss';
-import { FullAdvert } from 'api/types';
+import { FullAdvert } from 'data/types';
 
 const JobCard: React.ElementType = ({short_description, scope, stack, long_description, created_at, company_name, city}: FullAdvert) => {
 

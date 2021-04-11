@@ -1,12 +1,11 @@
-import axios from "axios";
+import axios from 'axios';
 
-const Instance = axios.create({
+const MainInstance = axios.create({
     baseURL: 'http://localhost:8080/api/v1',
     responseType: "json"
 });
 
-// TODO: Обработка ошибок
-Instance.interceptors.response.use((response: any) => {
+MainInstance.interceptors.response.use((response: any) => {
     console.log("Response getted");
     return response;
 }, function (error: any) {
@@ -15,4 +14,4 @@ Instance.interceptors.response.use((response: any) => {
     return Promise.reject(error);
 });
 
-export default Instance;
+export default MainInstance;

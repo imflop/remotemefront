@@ -33,3 +33,29 @@ export type PaginatedResponse = {
     previous: string,
     results: ShortAdvert[]
 };
+
+export interface VacancyInfo {
+    "short_description": string,
+    "long_description": string,
+    "created_at": string,
+    "stack": string[],
+    "scope": string,
+    "salary_from": number,
+    "salary_to": number,
+    "city": string,
+    "company_name": string,
+    "currency": string,
+}
+
+export interface VacancyShortInfo {
+    "uuid": string,
+    "short_description": string,
+    "created_at": string,
+    "stack": string[],
+    "scope": string,
+    "salary_from": number,
+    "salary_to": number,
+    "city": string,
+    "company_name": string,
+    "currency": string,
+}
