@@ -1,8 +1,18 @@
-FROM node:15
+FROM node:12.18-alpine AS build
 
-WORKDIR /frontend
-COPY . ./
+ENV NODE_ENV=production
+WORKDIR /usr/src/app
 
-# Нужно делать yarn build и раздать статику через nginx из папки public
+RUN npm install -g yarn
 
-EXPOSE 3000
+COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
+
+RUN yarn install
+
+COPY . .
+
+RUN yarn build
+
+# RUN npm install --production --silent && mv node_modules ../
+# EXPOSE 3000
+# CMD ["npm", "start"]
