@@ -1,5 +1,6 @@
-import React, {useEffect, useState} from "react";
-import { JobsAPI } from "../../api/jobs/jobs";
+import { ShortAdvert } from "data/types";
+import React, {useContext, useEffect, useState} from "react";
+import {APIContext} from "../../data/api/API";
 import JobCard from "../../components/job-card/JobCard";
 
 import './IndexPage.scss';
@@ -9,25 +10,21 @@ import './IndexPage.scss';
  * Компонент главной страницы (/)
  */
 const IndexPage: React.FunctionComponent = () => {
+    const api = useContext(APIContext);
 
-    const [jobsList, setJobsList] = useState<object[] | null>(null);
-
-    const getJobsList = async () => {
-        const data: Array<object> = await JobsAPI.list();
-        setJobsList(() => data);
-    }
+    const [vacancies, setVacancies] = useState<ShortAdvert[]>();
 
     useEffect(() => {
-        getJobsList();
+        api.vacancies.fetchVacancies().then(setVacancies);
     },[])
 
-    if (!jobsList) {
+    if (!vacancies) {
         return <div>Загрузка...</div>
     }
 
     return (
         <main className="container">
-            {jobsList.map(((item, i) => (
+            {vacancies.map(((item: ShortAdvert, i: number) => (
                 <JobCard key={i} {...item} />
             )))}
         </main>

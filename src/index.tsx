@@ -8,7 +8,7 @@ import {
 import "./assets/scss/styles.scss";
 
 import App from './components/app/App';
-import RouteWithSubRoutes from "./hoc/RouteWithSubRoutes";
+import RouteWithSubRoutes from "./hocs/RouteWithSubRoutes";
 import routes from "./pages/urls";
 
 ReactDOM.render(
