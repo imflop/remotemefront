@@ -1,32 +1,27 @@
-import React, {useEffect, useState} from 'react';
-import {
-    useParams
-} from "react-router-dom";
+import React, {useContext, useEffect, useState} from 'react';
+import {useParams} from "react-router-dom";
 
 import JobCardDetail from "../../../components/job-card/JobCardDetail";
-import {JobsAPI} from "../../../api/jobs/jobs";
+import {VacancyInfo} from "../../../data/types";
+import {APIContext} from "../../../data/api/API";
 
 const JobDetail: React.FunctionComponent = () => {
+    const api = useContext(APIContext);
     // @ts-ignore
     let { uuid } = useParams();
-    const [jobDetail, setJobDetail] = useState<object[] | null>(null);
-
-    const getJobDetail = async () => {
-        const data: Array<object> = await JobsAPI.id(uuid);
-        setJobDetail(() => data);
-    };
+    const [vacancy, setVacancy] = useState<VacancyInfo>();
 
     useEffect(() => {
-        getJobDetail();
-    }, []);
+        api.vacancies.fetchVacancy(uuid).then(setVacancy);
+    }, [uuid]);
 
-    if (jobDetail === null) {
+    if (!vacancy) {
         return <div>Загрузка...</div>;
     }
 
     return (
         <main className="container">
-            <JobCardDetail {...jobDetail} />
+            <JobCardDetail {...vacancy} />
         </main>
     );
 };

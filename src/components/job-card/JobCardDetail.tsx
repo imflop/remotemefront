@@ -2,9 +2,9 @@ import React from 'react';
 import { getHumanTimeFromNow } from "../../utils/dateTimeFormat";
 
 import './JobCard.scss';
-import {Job} from "./JobCard";
+import { FullAdvert } from 'data/types';
 
-const JobCard: React.ElementType = ({short_description, scope, stack, long_description, created_at, company_name, city}: Job) => {
+const JobCard: React.ElementType = ({short_description, scope, stack, long_description, created_at, company_name, city}: FullAdvert) => {
 
     const formattedDate = getHumanTimeFromNow(created_at);
 

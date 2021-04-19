@@ -2,11 +2,11 @@
   "name": "remotemefront",
   "version": "1.0.0",
   "private": true,
-    "scripts": {
-        "dev": "webpack serve --open",
-        "report": "webpack --profile --json > reports/stats.json && webpack-bundle-analyzer reports/stats.json --mode server --port 4000",
-        "build": "webpack"
-    },
+  "scripts": {
+    "dev": "webpack serve --open",
+    "report": "webpack --profile --json > reports/stats.json && webpack-bundle-analyzer reports/stats.json --mode server --port 4000",
+    "build": "webpack"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "dayjs": "^1.10.4",
@@ -25,7 +25,7 @@
     "@types/babel__core": "^7",
     "@types/babel__plugin-transform-runtime": "^7",
     "@types/babel__preset-env": "^7",
-    "@types/react": "^17",
+    "@types/react": "^17.0.3",
     "@types/react-dom": "^17",
     "@types/react-router-dom": "^5",
     "@types/sass": "^1",
