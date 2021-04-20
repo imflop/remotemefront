@@ -1,18 +1,7 @@
-FROM node:12.18-alpine AS build
+FROM node:14.4.0-alpine3.10
+USER root
+WORKDIR /frontend
+COPY . /frontend
 
-ENV NODE_ENV=production
-WORKDIR /usr/src/app
-
-RUN npm install -g yarn
-
-COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-
-RUN yarn install
-
-COPY . .
-
+RUN yarn
 RUN yarn build
-
-# RUN npm install --production --silent && mv node_modules ../
-# EXPOSE 3000
-# CMD ["npm", "start"]
