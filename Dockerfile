@@ -1,8 +1,7 @@
-FROM node:15
-
+FROM node:14.4.0-alpine3.10
+USER root
 WORKDIR /frontend
-COPY . ./
+COPY . /frontend
 
-# Нужно делать yarn build и раздать статику через nginx из папки public
-
-EXPOSE 3000
+RUN yarn
+RUN yarn build
