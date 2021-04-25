@@ -6,10 +6,17 @@ import {
 } from "react-router-dom";
 
 import "./assets/scss/styles.scss";
-
+import * as Sentry from "@sentry/react";
+import { Integrations } from "@sentry/tracing";
 import App from './components/app/App';
 import RouteWithSubRoutes from "./hocs/RouteWithSubRoutes";
 import routes from "./pages/urls";
+
+Sentry.init({
+    dsn: "https://c93339ed773d4d6ebc3c7d21350a1c1e@o578669.ingest.sentry.io/5735030",
+    integrations: [new Integrations.BrowserTracing()],
+    tracesSampleRate: 1.0, // Capture 100% of transactions
+});
 
 ReactDOM.render(
     <React.StrictMode>
