@@ -29,5 +29,6 @@ yarn-error.log*
 !.yarn/releases
 !.yarn/plugins
 !.yarn/sdks
+.yarn/sdks/*
 !.yarn/versions
 .pnp.*
