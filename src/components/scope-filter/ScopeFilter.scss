@@ -1,8 +1,24 @@
 .list-inline {
   display: inline-flex;
   list-style-type: none;
+  justify-items: space-around;
+  width: 100%;
+  margin-block-start: 0em;
 
   & li:not(:last-child) {
     padding-right: 10px;
   }
+
+  & .card {
+    box-shadow: none;
+    padding: 5px 10px;
+
+    & h5 {
+      margin: 5px;
+    }
+  }
+}
+
+.text-center {
+  text-align: center!important;
 }
