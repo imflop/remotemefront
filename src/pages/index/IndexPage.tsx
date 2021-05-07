@@ -25,16 +25,22 @@ const IndexPage: React.FunctionComponent = () => {
         return <div>Загрузка...</div>
     }
 
-    return (        
+    if (!scope) {
+        return <div>Loading scopes ...</div>
+    }
+
+    return (
         <main className="container">
-            {scope.map((s: Scope) => (
-                <ScopeFilter key={s.id} {...s} />
-            ))}
+            <ul className="list-inline">
+                {scope.map((s: Scope) => (
+                    <ScopeFilter key={s.id} {...s} />
+                ))}
+            </ul>
 
 
-            {vacancies.map(((item: ShortAdvert, i: number) => (
+            {vacancies.map((item: ShortAdvert, i: number) => (
                 <JobCard key={i} {...item} />
-            )))}
+            ))}
         </main>
     );
 };

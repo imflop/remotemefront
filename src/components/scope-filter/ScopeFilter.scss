@@ -1,0 +1,8 @@
+.list-inline {
+  display: inline-flex;
+  list-style-type: none;
+
+  & li:not(:last-child) {
+    padding-right: 10px;
+  }
+}
