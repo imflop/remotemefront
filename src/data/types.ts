@@ -34,6 +34,11 @@ export type PaginatedResponse = {
     results: ShortAdvert[]
 };
 
+export type Scope = {
+    id: number,
+    title: string
+}
+
 export interface VacancyInfo {
     "short_description": string,
     "long_description": string,
@@ -58,4 +63,9 @@ export interface VacancyShortInfo {
     "city": string,
     "company_name": string,
     "currency": string,
+}
+
+export interface Scopes {
+    "id": number,
+    "title": string,
 }
