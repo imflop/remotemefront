@@ -18,7 +18,7 @@ const IndexPage: React.FunctionComponent = () => {
 
     useEffect(() => {
         api.vacancies.fetchVacancies().then(setVacancies);
-        api.scope.fetchScopes().then(setScopes);
+        api.vacancies.fetchScopes().then(setScopes);
     },[])
 
     if (!vacancies) {

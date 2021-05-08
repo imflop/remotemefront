@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const MainInstance = axios.create({
-    baseURL: 'https://localhost:8000/api/v1',
+    baseURL: 'https://api.remoteme.dev/api/v1',
     responseType: "json"
 });
 
