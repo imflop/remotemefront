@@ -11,7 +11,7 @@ const ApolloQglProvider: React.ElementType = ({children}) => {
         typePolicies: {
             Query: {
                 fields: {
-                    vacancies: offsetLimitPagination()
+                    vacancies: offsetLimitPagination(["scope"])
                 },
             },
         },

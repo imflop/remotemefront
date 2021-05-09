@@ -3,7 +3,7 @@ import JobDetail from "./jobs/jobDetail/JobDetail";
 
 export default [
     {
-        path: "/",
+        path: ["/", "/:scope"],
         exact: true,
         component: IndexPage
     },
