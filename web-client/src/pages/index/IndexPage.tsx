@@ -1,13 +1,15 @@
-import { VacancyShortInfo } from "data/types";
-import React, { useState } from "react";
+import {Scope, VacancyShortInfo } from "data/types";
+import React, { useState, useEffect } from "react";
 import JobCard from "../../components/job-card/JobCard";
-import { gql, useQuery } from '@apollo/client';
+import {gql, useQuery} from '@apollo/client';
+import { useParams } from "react-router-dom";
 
 import './IndexPage.scss';
+import ScopeFilter from "../../components/scope-filter/ScopeFilter";
 
 const GET_VACANCIES = gql`
-  query GetVacancies($offset: Int, $limit: Int) {
-     vacancies(offset: $offset, limit: $limit) {
+  query GetVacancies($scope: ID, $offset: Int, $limit: Int) {
+     vacancies(scope: $scope, offset: $offset, limit: $limit) {
         uuid
         short_description
         created_at
@@ -19,16 +21,21 @@ const GET_VACANCIES = gql`
         company_name
         currency
     }
+    scopes {
+        id
+        title
+    }
   }
 `;
 
-type VacanciesVars = {
+export type VacanciesVars = {
     scope: number|string,
     limit: number,
     offset: number
 }
 interface VacanciesData {
     vacancies: VacancyShortInfo[];
+    scopes: Scope[];
 }
 
 /**
@@ -36,16 +43,18 @@ interface VacanciesData {
  */
 const IndexPage: React.FunctionComponent = () => {
     const [limit, setLimit] = useState(10);
-    const { loading, data, fetchMore } = useQuery<VacanciesData, VacanciesVars>(
+    let { scope } = useParams<any>();
+    const { loading, data, refetch, fetchMore } = useQuery<VacanciesData, VacanciesVars>(
         GET_VACANCIES,
         {
             variables: {
-                scope: "",
+                scope: scope || "",
                 offset: 0,
                 limit: 10
             }, }
     );
 
+    useEffect((): any => refetch({scope: scope}), [scope]);
     if (loading) {
         return <div>Загрузка...</div>
     }
@@ -65,12 +74,21 @@ const IndexPage: React.FunctionComponent = () => {
     }
 
     return (
-        <main className="container">
-            {data?.vacancies.map(((item: VacancyShortInfo, i: number) => (
-                <JobCard key={i} {...item} />
-            )))}
-            <button onClick={handleClick}>Получить больше контента</button>
-        </main>
+        <>
+            <div className="scope-list__wrapper">
+                <ul className="scope-list">
+                    {data?.scopes.map(((s: Scope) => (
+                        <ScopeFilter key={s.id} {...s} />
+                    )))}
+                </ul>
+            </div>
+            <main className="container">
+                {data?.vacancies.map(((item: VacancyShortInfo, i: number) => (
+                    <JobCard key={i} {...item} />
+                )))}
+                <button onClick={handleClick}>Получить больше контента</button>
+            </main>
+        </>
     );
 };
 
