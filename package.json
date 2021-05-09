@@ -1,0 +1,7 @@
+{
+  "name": "remotemefront",
+  "workspaces": [
+    "gql-server",
+    "web-client"
+  ]
+}
