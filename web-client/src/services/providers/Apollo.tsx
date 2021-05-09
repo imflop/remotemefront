@@ -4,11 +4,22 @@ import {
     InMemoryCache,
     ApolloProvider
 } from "@apollo/client";
+import { offsetLimitPagination } from "@apollo/client/utilities";
 
 const ApolloQglProvider: React.ElementType = ({children}) => {
+    const cache = new InMemoryCache({
+        typePolicies: {
+            Query: {
+                fields: {
+                    vacancies: offsetLimitPagination()
+                },
+            },
+        },
+    });
+
     const client = new ApolloClient({
-        uri: 'https://48p1r2roz4.sse.codesandbox.io',
-        cache: new InMemoryCache()
+        uri: 'http://localhost:3001',
+        cache
     });
 
     return (
