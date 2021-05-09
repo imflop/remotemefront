@@ -1,10 +1,11 @@
 import path from 'path';
-import webpack from 'webpack';
+import { Configuration } from 'webpack';
+import 'webpack-dev-server';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 
-const config: webpack.Configuration = {
+const config: Configuration = {
     mode: 'development',
     entry: {
         app: path.join(__dirname, 'src', 'index.tsx')
