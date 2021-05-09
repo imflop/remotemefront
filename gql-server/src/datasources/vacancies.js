@@ -5,11 +5,11 @@ class VacanciesAPI extends GenericAPI {
     super();
   }
 
-  async getVacancies(scope = "", pageSize, after = 0) {
+  async getVacancies(scope = "", limit, offset = 0) {
     const response = await this.get('adverts/list', {
       // Query parameters
-      limit: pageSize,
-      offset: after,
+      limit,
+      offset,
       scope
     });
     return response.results

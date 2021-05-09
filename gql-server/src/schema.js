@@ -20,7 +20,7 @@ const typeDefs = gql`
   }
   
   type Query {
-    vacancies(scope: ID, pageSize: Int, after: Int): [Vacancy]
+    vacancies(scope: ID, limit: Int, offset: Int): [Vacancy]
     scopes: [Scope]
   }
 `;

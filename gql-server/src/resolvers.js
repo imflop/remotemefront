@@ -1,7 +1,7 @@
 const resolvers = {
   Query: {
-    vacancies: async (_, { scope, pageSize, after }, {dataSources}) => {
-      return dataSources.vacanciesAPI.getVacancies(scope, pageSize, after);
+    vacancies: async (_, { scope, limit, offset }, {dataSources}) => {
+      return dataSources.vacanciesAPI.getVacancies(scope, limit, offset);
     },
     scopes: async (_, __, {dataSources}) => {
       return dataSources.vacanciesAPI.getScopes();
