@@ -4,12 +4,13 @@
 node_modules
 .idea
 .vscode
+.editorconfig
 
 # testing
-/reports
+*/reports
 
 # production
-/dist
+*/dist
 
 # misc
 .DS_Store
@@ -28,6 +29,6 @@ yarn-error.log*
 !.yarn/patches
 !.yarn/releases
 !.yarn/plugins
-!.yarn/sdks
+.yarn/sdks
 !.yarn/versions
 .pnp.*
