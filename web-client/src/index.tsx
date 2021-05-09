@@ -10,6 +10,7 @@ import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
 import App from './components/app/App';
 import RouteWithSubRoutes from "./hocs/RouteWithSubRoutes";
+import Providers from "./services/providers";
 import routes from "./pages/urls";
 
 Sentry.init({
@@ -20,15 +21,17 @@ Sentry.init({
 
 ReactDOM.render(
     <React.StrictMode>
-        <Router>
-            <App>
-                <Switch>
-                    {routes.map((route, i) => (
-                        <RouteWithSubRoutes key={i} {...route} />
-                    ))}
-                </Switch>
-            </App>
-        </Router>
+        <Providers>
+            <Router>
+                <App>
+                    <Switch>
+                        {routes.map((route, i) => (
+                            <RouteWithSubRoutes key={i} {...route} />
+                        ))}
+                    </Switch>
+                </App>
+            </Router>
+        </Providers>
     </React.StrictMode>,
 document.getElementById('root')
 );

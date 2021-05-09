@@ -5,7 +5,7 @@ import { Route, RouteProps } from "react-router-dom";
 type Modify<T, R> = Omit<T, keyof R> & R;
 export type RouteObject  = Modify<RouteProps , {
     component: React.ElementType,
-}>
+}>;
 
 
 /**
