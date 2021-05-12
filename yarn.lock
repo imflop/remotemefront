@@ -1770,6 +1770,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/dotenv-webpack@npm:^7":
+  version: 7.0.2
+  resolution: "@types/dotenv-webpack@npm:7.0.2"
+  dependencies:
+    "@types/node": "*"
+    tapable: ^2.2.0
+    webpack: ^5
+  checksum: 5674c31fa86e69b235af6fbf63d1d5d922706bd77f2b73d4093c969443bc7a8980016206bd6a1bc068c27dbacf56d830ae35fad753ae2ecc92b3b91e6a4f8056
+  languageName: node
+  linkType: hard
+
 "@types/eslint-scope@npm:^3.7.0":
   version: 3.7.0
   resolution: "@types/eslint-scope@npm:3.7.0"
@@ -4204,6 +4215,40 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv-defaults@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "dotenv-defaults@npm:2.0.1"
+  dependencies:
+    dotenv: ^8.2.0
+  checksum: 53ac7d987bb9de5d9be0f76040460f398cd56708833143f95ed48732c8d73cf55868d4b368c4eb6dbeba704263da7262623c33557c897f5c06262973477abf0d
+  languageName: node
+  linkType: hard
+
+"dotenv-webpack@npm:^7.0.2":
+  version: 7.0.2
+  resolution: "dotenv-webpack@npm:7.0.2"
+  dependencies:
+    dotenv-defaults: ^2.0.1
+  peerDependencies:
+    webpack: ^4 || ^5
+  checksum: 63cb71dd1b1d0f77087c32341f2a2dea56facf13919a346890545a7b1b407a9bd323248e6a8bedd46cf17cb9a8f13ae37a85887cf5d97e1edf53ca87daa8758e
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^8.2.0":
+  version: 8.6.0
+  resolution: "dotenv@npm:8.6.0"
+  checksum: f4649999a157061dd169118f459d88db56380b2eef68e87fa9de7201796e5f6d94fa337658d7e148f404b48652a0eefe11222d9eba0cd464497911ae56cd6f93
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "dotenv@npm:9.0.1"
+  checksum: d269ad03ed91e8f44a77fbf04ac6f67678b22a7ca2094f3033e1197d5d4756be29ad1ea3951a335149a2363889144a6b171dc91fda88a60114c5dd388a6e17d3
+  languageName: node
+  linkType: hard
+
 "duplexer3@npm:^0.1.4":
   version: 0.1.4
   resolution: "duplexer3@npm:0.1.4"
@@ -5098,6 +5143,7 @@ fsevents@~2.3.1:
   dependencies:
     apollo-datasource-rest: ^0.13.0
     apollo-server: ^2.24.0
+    dotenv: ^9.0.1
     graphql: ^15.5.0
     nodemon: ^2.0.7
   languageName: unknown
@@ -9556,6 +9602,7 @@ typescript@^4.2.4:
     "@types/babel__core": ^7.1.14
     "@types/babel__plugin-transform-runtime": ^7.9.1
     "@types/babel__preset-env": ^7.9.1
+    "@types/dotenv-webpack": ^7
     "@types/react": ^17.0.5
     "@types/react-dom": ^17.0.3
     "@types/react-router-dom": ^5.1.7
@@ -9565,6 +9612,7 @@ typescript@^4.2.4:
     babel-loader: ^8.2.2
     css-loader: ^5.2.0
     dayjs: ^1.10.4
+    dotenv-webpack: ^7.0.2
     fork-ts-checker-webpack-plugin: ^6.2.0
     graphql: ^15.5.0
     html-webpack-plugin: ^5.3.1
