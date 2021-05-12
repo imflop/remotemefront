@@ -11,6 +11,8 @@ node_modules
 
 # production
 */dist
+.env
+!.env.example
 
 # misc
 .DS_Store
