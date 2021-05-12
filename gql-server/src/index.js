@@ -1,5 +1,6 @@
 const { ApolloServer } = require('apollo-server');
 const VacanciesAPI = require('./datasources/vacancies');
+const { GRAPHQL_PORT, CORS_ORIGIN } = require('./constants');
 
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
@@ -14,9 +15,10 @@ const server = new ApolloServer({
       vacanciesAPI: new VacanciesAPI(),
     };
   },
+  cors: CORS_ORIGIN
 });
 
 // The `listen` method launches a web server.
-server.listen({port: 3001}).then(({ url }) => {
+server.listen({ port: GRAPHQL_PORT }).then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });

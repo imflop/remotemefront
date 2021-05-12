@@ -3,6 +3,7 @@ import { Configuration } from 'webpack';
 import 'webpack-dev-server';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import DotenvWebpackPlugin from 'dotenv-webpack';
 
 
 const config: Configuration = {
@@ -25,6 +26,12 @@ const config: Configuration = {
         extensions: [".tsx", ".ts", ".js", ".json"],
     },
     plugins: [
+        new DotenvWebpackPlugin(
+            {
+                path: '../.env', // load this now instead of the ones in '.env'
+                systemvars: true
+            }
+        ),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'index.html')
         }),

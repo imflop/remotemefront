@@ -2,7 +2,20 @@ version: '3'
 
 services:
   gql-server:
-    restart: on-failer
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile-gql
+    env_file:
+      - .env
+    command: yarn workspace gql-server start
     ports:
       - 3001:3001
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile-web
+    env_file:
+      - .env
+    command: yarn workspace web-client build
+    volumes:
+      - ./web-client/dist:/frontend/web-client/dist

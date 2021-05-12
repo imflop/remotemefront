@@ -5,6 +5,8 @@ import {
     ApolloProvider
 } from "@apollo/client";
 import { offsetLimitPagination } from "@apollo/client/utilities";
+import {GRAPHQL_BASE_URL, GRAPHQL_PORT} from "../../data/constants";
+
 
 const ApolloQglProvider: React.ElementType = ({children}) => {
     const cache = new InMemoryCache({
@@ -18,7 +20,7 @@ const ApolloQglProvider: React.ElementType = ({children}) => {
     });
 
     const client = new ApolloClient({
-        uri: 'http://localhost:3001',
+        uri: `${GRAPHQL_BASE_URL}:${GRAPHQL_PORT}`,
         cache
     });
 

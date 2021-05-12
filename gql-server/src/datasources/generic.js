@@ -1,3 +1,4 @@
+const { RESTAPI_BASE_URL } = require('../constants');
 const { RESTDataSource } = require('apollo-datasource-rest');
 
 class GenericAPI extends RESTDataSource {
@@ -5,7 +6,7 @@ class GenericAPI extends RESTDataSource {
     super();
 
     // Sets the base URL for the REST API
-    this.baseURL = 'https://api.remoteme.dev/api/v1/';
+    this.baseURL = RESTAPI_BASE_URL;
   }
 }
 
