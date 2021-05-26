@@ -4,7 +4,7 @@ services:
   gql-server:
     build:
       context: .
-      dockerfile: Dockerfile-gql
+      dockerfile: gql-server/Dockerfile
     env_file:
       - .env
     command: yarn workspace gql-server start
@@ -13,7 +13,7 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile-web
+      dockerfile: web-client/Dockerfile
     env_file:
       - .env
     command: yarn workspace web-client build
